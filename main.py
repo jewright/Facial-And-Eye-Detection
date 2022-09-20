@@ -23,7 +23,7 @@ def main():
         faceCascade = cv2.CascadeClassifier(fCascPath)
         eyeCascade = cv2.CascadeClassifier(eCascPath)
 
-        video_capture = cv2.VideoCapture(1)
+        video_capture = cv2.VideoCapture(0)
         while True:
             ret, frames = video_capture.read()
             gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
