@@ -78,6 +78,7 @@ def main():
                     font, 0.6, (255, 255, 255), 2, 5)
 
         cv2.imshow("Faces and Eyes Detected", image)
+        print("Found {0} faces".format(len(faces))+ " and {0} eyes".format(len(eyes)))
         cv2.waitKey(1)
         cv2.destroyAllWindows()
 
