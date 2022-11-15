@@ -61,14 +61,14 @@ def main():
         faceCascade = cv2.CascadeClassifier(fCascPath)
         eyeCascade = cv2.CascadeClassifier(eCascPath)
 
-        faces = faceCascade.detectMultiScale(gray, scaleFactor=1.052, minNeighbors=21, minSize=(30, 30),
+        faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=21, minSize=(30, 30),
                                              flags=cv2.CASCADE_SCALE_IMAGE)
-        eyes = eyeCascade.detectMultiScale(image, scaleFactor=1.1, minNeighbors=5, minSize=(20, 20),
+        eyes = eyeCascade.detectMultiScale(image, scaleFactor=1.1, minNeighbors=20, minSize=(20, 20),
                                            flags=cv2.CASCADE_SCALE_IMAGE)
         for (x, y, w, h) in faces:
-            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.rectangle(image, (x, y), (x + w, y + h), (2, 255, 2), 15)
         for (ex, ey, ew, eh) in eyes:
-            cv2.rectangle(image, (ex, ey), (ex + ew, ey + eh), (255, 0, 0), 3)
+            cv2.rectangle(image, (ex, ey), (ex + ew, ey + eh), (255, 2, 2), 15)
 
         font = cv2.FONT_HERSHEY_DUPLEX
         x, y, w, h = 0, 0, 400, 50
